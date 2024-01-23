@@ -1,0 +1,101 @@
+@font-face {
+  font-family: "DosGothic";
+  src: url(./fonts/DOSGothic.ttf);
+}
+@font-face {
+  font-family: "DOSIyagiBoldface";
+  src: url(./fonts/DOSIyagiBoldface.ttf);
+}
+@font-face {
+  font-family: "DOSMyungjo";
+  src: url(./fonts/DOSMyungjo.ttf);
+}
+@font-face {
+  font-family: "DOSPilgi";
+  src: url(./fonts/DOSPilgi.ttf);
+}
+@font-face {
+  font-family: "DOSSaemmul";
+  src: url(./fonts/DOSSaemmul.ttf);
+}
+@font-face {
+  font-family: "MiraeroNormal";
+  src: url(./fonts/MiraeroNormal.ttf);
+}
+@font-face {
+  font-family: "Sam3KRFont";
+  src: url(./fonts/Sam3KRFont.ttf);
+}
+
+html {
+  --color-texta: #1d1d1d;
+  --color-textb: #fff;
+}
+
+html,body{
+  cursor: none;
+}
+
+.cursor {
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid var(--color-texta);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transition-property: background, transform;
+  transform-origin: 100% 100%;
+  backdrop-filter: sepia(20%);
+  background-size: cover;
+}
+.cursor-grow {
+  transform: scale(2);
+  background-color: var(--color-texta);
+}
+
+.button {
+  width: 150px;
+  height: 40px;
+  margin-top: 20px;
+  background-color: #333;
+  color: #fff;
+  font-size: 30px;
+  font-family: 'DOSMyungjo';
+  border: 2px solid #fff;
+  padding: 4px 8px;
+  outline: none;
+  cursor: none;
+}
+
+.button:hover {
+  background-color: #b4b4b4;
+  color: black;
+}
+
+
+/* Apply cursor effect on hover */
+.button:hover + .cursor {
+  transform: scale(2);
+  background-color: rgba(0, 0, 255, 0.5);
+  border: none;
+}
+
+/* Apply cursor effect on active state (button pressed) */
+.button:active + .cursor {
+  transform: scale(2);
+  background-color: var(--color-texta);
+}
+
+.triangle-item::before {
+  content: '▶'; /* "▶" 문자 사용 */
+  display: inline-block;
+  width: 16px; /* 삼각형의 크기 조절 */
+  height: 16px;
+  color: #000; /* 삼각형의 색상 조절 */
+  margin-right: 8px; /* 삼각형과 텍스트 간의 간격을 조정하세요 */
+}
+
+
