@@ -2,6 +2,10 @@ import React, { useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate} from 'react-router-dom';
 import "./App.css";
 import Menu from './Menu';
+import Test from './components/Test'; 
+import Game1 from './components/Game1'; 
+import Game2 from './components/Game2'; 
+
 
 const StartButton = () => {
   const navigate = useNavigate();
@@ -52,13 +56,13 @@ const AppContent = () => {
 const App = () => {
   return (
     <div className="App" style={{ textAlign: 'center', marginTop: '180px' }}>
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Routes>
-          {/* /menu 경로에 대한 라우트 */}
           <Route path="/menu" element={<Menu />} />
-
-          {/* 기본 라우트 */}
           <Route path="/" element={<AppContent />} />
+          <Route path="/test" element={<Test />} />
+          <Route path="/game1" element={<Game1 />} />
+          <Route path="/game2" element={<Game2 />} />
         </Routes>
       </Router>
     </div>

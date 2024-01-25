@@ -73,6 +73,7 @@ html,body{
 .button:hover {
   background-color: #b4b4b4;
   color: black;
+  transform: scale(1.2);
 }
 
 
@@ -99,3 +100,6 @@ html,body{
 }
 
 
+.link:hover{
+  font-size: 1.2em;
+}
